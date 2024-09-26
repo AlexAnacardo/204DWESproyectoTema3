@@ -1,0 +1,75 @@
+/*General*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%;
+}
+
+/*Encabezado*/
+
+h1{
+    text-align: center;
+    font-size: 500%;
+    background-color: rgb(145, 145, 202);
+    color: rgb(16, 9, 114);  
+    padding: 2% 1%;                 
+}
+
+/*body*/
+
+body{                              
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(223, 217, 226); 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;                
+    height: 100%;   
+    
+}
+main{
+    display: flex;
+    margin: 3% auto;
+    height: 100%;      
+    align-items: center;
+    background-color: rgba(157, 139, 167, 0.3);
+    border-radius: 9%;
+    padding: 3%;
+}
+
+table{
+    width: 100%;
+}
+table, th, td{    
+    border: 0.15em solid rgb(16, 9, 114);
+    border-collapse: collapse; 
+    text-align: center;
+}
+
+td{    
+    
+}
+/*footer*/
+
+footer{
+    display: flex;
+    flex-direction: row;                 
+    justify-content: center;
+    background-color: rgb(145, 145, 202);
+    font-size: 140%;  
+    
+}
+a{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+p{
+    text-align: center;                
+    width: fit-content;   
+    margin: 2% 1.5%;                          
+}
+p:hover{
+    transform: scale(1.3);                
+}
