@@ -7,7 +7,6 @@
         <p>
             <?php
                 echo 'Hola mundo';
-                
                 phpinfo();
             ?>
         </p>
