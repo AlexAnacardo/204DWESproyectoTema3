@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        <h1>Mostrar en tu página index la fecha y hora actual en Oporto formateada en portugués</h1>
+        <h1>Mostrar en tu página index la fecha y hora actual en Oporto formateada en portugués.</h1>
     </header>
     <?php
     /*
@@ -15,6 +15,8 @@
     */
         date_default_timezone_set("Europe/Portugal");
         echo date('Y-m-d H:i:s', time());
+        
+        
     ?>
 </body>
 </html>

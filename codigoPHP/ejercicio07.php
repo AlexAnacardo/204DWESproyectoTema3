@@ -11,6 +11,7 @@
     </header>
     <?php
         echo(basename(__FILE__));
+        //usar var local
     ?>
 </body>
 </html>

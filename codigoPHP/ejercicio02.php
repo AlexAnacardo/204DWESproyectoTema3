@@ -5,7 +5,7 @@
     </head>
     <body>
         <header>
-            <h1>Hola mundo y phpinfo()</h1>
+            <h1>Inicializar y mostrar una variable heredoc</h1>
         </header>
         <p>
             <?php

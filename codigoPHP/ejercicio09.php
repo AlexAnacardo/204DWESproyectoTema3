@@ -11,6 +11,8 @@
     </header>
     <?php
         echo(__FILE__);
+        
+    //Usar var global
     ?>
 </body>
 </html>

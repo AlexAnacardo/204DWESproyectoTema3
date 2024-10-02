@@ -9,7 +9,11 @@
         </header>
         <p>
             <?php                
-                echo date("Y,m,d");
+
+                $oFechaActual = new DateTime();
+                    setlocale(LC_TIME, 'es_ES');                   
+                    
+                    echo(strftime("Hoy es %d de %b del %Y y son las %k:%m"));                    
             ?>
         </p>
         <footer>
