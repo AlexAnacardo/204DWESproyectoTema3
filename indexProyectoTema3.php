@@ -30,62 +30,62 @@
                     <tr>
                         <td>1</td>
                         <td>Inicializar variables de los distintos tipos de datos básicos(string, int, float, bool) y mostrar los datos por pantalla (echo, print, printf, print_r,var_dump).</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio01.php"><image src="webroot/images/play.png" heigth="25%" width="25%"/></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio01.php"><image src="webroot/images/ojo.png" heigth="30%" width="30%"/></a></td>
                     </tr>
                     <tr>
                         <td>2</td>
                         <td>Inicializar y mostrar una variable heredoc</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio02.php"><image src="webroot/images/play.png" heigth="25%" width="25%"/></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio02.php"><image src="webroot/images/ojo.png" heigth="30%" width="30%"/></a></td>
                     </tr>
                     <tr>
                         <td>3</td>
                         <td>Mostrar en tu página index la fecha y hora actual formateada en castellano. (Utilizar cuando sea posible la clase DateTime)</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio03.php"><image src="webroot/images/play.png" heigth="25%" width="25%"/></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio03.php"><image src="webroot/images/ojo.png" heigth="30%" width="30%"/></a></td>
                     </tr>
                     <tr>
                         <td>4</td>
                         <td>Mostrar en tu página index la fecha y hora actual en Oporto formateada en portugués.</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio04.php"><image src="webroot/images/play.png" heigth="25%" width="25%"/></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio04.php"><image src="webroot/images/ojo.png" heigth="30%" width="30%"/></a></td>
                     </tr>
                     <tr>
                         <td>5</td>
                         <td>Inicializar y mostrar una variable que tiene una marca de tiempo (timestamp)</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio05.php"><image src="webroot/images/play.png" heigth="25%" width="25%"/></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio05.php"><image src="webroot/images/ojo.png" heigth="30%" width="30%"/></a></td>
                     </tr>
                     <tr>
                         <td>6</td>
                         <td>Operar con fechas: calcular la fecha y el día de la semana de dentro de 60 días</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio06.php"><image src="webroot/images/play.png" heigth="25%" width="25%"/></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio06.php"><image src="webroot/images/ojo.png" heigth="30%" width="30%"/></a></td>
                     </tr>
                     <tr>
                         <td>7</td>
                         <td>Mostrar el nombre del fichero que se está ejecutando</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio07.php"><image src="webroot/images/play.png" heigth="25%" width="25%"/></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio07.php"><image src="webroot/images/ojo.png" heigth="30%" width="30%"/></a></td>
                     </tr>
                     <tr>
                         <td>8</td>
                         <td>Mostrar la dirección IP del equipo desde el que estás accediendo</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio08.php"><image src="webroot/images/play.png" heigth="25%" width="25%"/></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio08.php"><image src="webroot/images/ojo.png" heigth="30%" width="30%"/></a></td>
                     </tr>
                     <tr>
                         <td>9</td>
                         <td>Mostrar el path donde se encuentra el fichero que se está ejecutando.</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio09.php"><image src="webroot/images/play.png" heigth="25%" width="25%"/></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio09.php"><image src="webroot/images/ojo.png" heigth="30%" width="30%"/></a></td>
                     </tr>
                     <tr>
                         <td>10</td>
                         <td>Mostrar el contenido del fichero que se está ejecutando</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio10.php"><image src="webroot/images/play.png" heigth="25%" width="25%"/></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio10.php"><image src="webroot/images/ojo.png" heigth="30%" width="30%"/></a></td>
                     </tr>
                     <tr>
                         <td>11</td>

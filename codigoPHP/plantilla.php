@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title>Ej 00</title>
+        <title>Ej xx</title>
     </head>
     <body>
         <header>
-            <h1>Hola mundo y phpinfo()</h1>
+            <h1></h1>
         </header>
         <p>
             <?php
-                echo 'Hola mundo';
-                phpinfo();
+
             ?>
         </p>
         <footer>

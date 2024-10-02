@@ -9,8 +9,11 @@
         </header>
         <p>
             <?php
-                echo 'Hola mundo';
-                phpinfo();
+                $cadena = <<< micadena
+                        Esto es una variable de tipo heredoc
+                        micadena;
+                
+                echo $cadena;
             ?>
         </p>
         <footer>

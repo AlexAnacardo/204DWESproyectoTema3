@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title>Ej 00</title>
+        <title>Ej 03</title>
     </head>
     <body>
         <header>
             <h1>Hola mundo y phpinfo()</h1>
         </header>
         <p>
-            <?php
-                echo 'Hola mundo';
-                phpinfo();
+            <?php                
+                echo date("Y,m,d");
             ?>
         </p>
         <footer>
@@ -18,5 +17,3 @@
         </footer>
     </body>
 </html>
-
-
