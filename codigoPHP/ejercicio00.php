@@ -9,6 +9,10 @@
         </header>
         <p>
             <?php
+            /*
+             * @version 2024/10/1
+             * @author Alex Asensio Sanchez                          
+             */
                 echo 'Hola mundo';
                 phpinfo();
             ?>

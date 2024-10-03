@@ -11,12 +11,16 @@
     </header>
     <?php
     /*
-        Este no sale
-    */
-        date_default_timezone_set("Europe/Portugal");
-        echo date('Y-m-d H:i:s', time());
+     * @version 2024/10/1
+     * @author Alex Asensio Sanchez                          
+     */
+        date_default_timezone_set("Europe/Lisbon");        
+        echo("La fecha actual en Oporto es: ".date('j')." de ".date('F')." de ".date('Y')." y la hora es: ".date('H:i:s'));
         
         
     ?>
+    <footer>
+        <p><a href="../indexProyectoTema3.php">Alex Asensio Sanchez</a></p>
+    </footer>
 </body>
 </html>

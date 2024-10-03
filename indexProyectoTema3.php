@@ -96,8 +96,8 @@
                     <tr>
                         <td>12</td>
                         <td>Mostrar el contenido de las variables superglobales (utilizando print_r() y foreach())</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio12.php"><image src="webroot/images/play.png" heigth="25%" width="25%"/></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio12.php"><image src="webroot/images/ojo.png" heigth="30%" width="30%"/></a></td>
                     </tr>
                     <tr>
                         <td>13</td>
@@ -114,8 +114,8 @@
                     <tr>
                         <td>15</td>
                         <td>Crear e inicializar un array con el sueldo percibido de lunes a domingo. Recorrer el array para calcular el sueldo percibido durante la semana. (Array asociativo con los nombres de los días de la semana)</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/ejercicio15.php"><image src="webroot/images/play.png" heigth="25%" width="25%"/></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio15.php"><image src="webroot/images/ojo.png" heigth="30%" width="30%"/></a></td>
                     </tr>
                     <tr>
                         <td>16</td>

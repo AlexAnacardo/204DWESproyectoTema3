@@ -9,6 +9,10 @@
         </header>
         <p>
             <?php
+            /*
+             * @version 2024/10/1
+             * @author Alex Asensio Sanchez                          
+             */
                 $cadena = <<< micadena
                         Esto es una variable de tipo heredoc
                         micadena;

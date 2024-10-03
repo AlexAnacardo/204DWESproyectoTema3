@@ -10,7 +10,7 @@
         <p>
             <?php
             /*
-             * Fecha de modificación 2024/10/1
+             * @version 2024/10/1
              * @author Alex Asensio Sanchez
              * 
              * Jugando con variables y mostrar por pantalla
@@ -49,22 +49,7 @@
                 "<br>",
                 var_dump($array)
             ?>
-        </p>
-        <p>
-            <?php
-                /*Hola, hoy es 2 de octubre de 2024 y son las xx:xx horas en benavente, las xx:xx en Oporto, naci el DD de MES de AÑO y por tanto tengo
-                XX años que es lo mismo que xx dias. El 1 de enero de 2050 tendre XX años*/
-            
-                
-                $oFechaActual=new DateTime('now', new DateTimeZone("Europe/Madrid")); 
-                $oFechaNacimiento=new DateTime("2004-07-19");
-                echo("Hola, hoy es ".$oFechaActual->format("j")." de ".$oFechaActual->format("F")." de".$oFechaActual->format("Y"));
-                $oFechaActual->setTimezone(new DateTimeZone("Europe/Lisbon"));
-                echo(" y son las".$oFechaActual->format("H").":".$oFechaActual->format("i")." horas en benavente, las ".$oFechaActual->format("H").":".$oFechaActual->format("i")." en Oporto. <br>");
-                echo("Naci el ".$oFechaNacimiento->format("j")." de ".$oFechaNacimiento->format("F")." de ".$oFechaNacimiento->format("Y")." y por tanto tengo ".($oFechaActual->diff($oFechaNacimiento))->format("%y")." años, que es lo mismo que x dias. <br>");
-                echo("El 1 de enero de 2050 tendre ".($oFechaNacimiento->diff(new DateTime("2050-07-19")))->format("%y")." años");
-            ?>
-        </p>
+        </p>        
         <footer>
             <p><a href="../indexProyectoTema3.php">Alex Asensio Sanchez</a></p>
         </footer>

@@ -10,8 +10,16 @@
         <h1>Mostrar el nombre del fichero que se está ejecutando</h1>
     </header>
     <?php
+    /*
+     * @version 2024/10/1
+     * @author Alex Asensio Sanchez                          
+     */
         echo(basename(__FILE__));
+        echo($_GLOBALS['file']);
         //usar var local
     ?>
+    <footer>
+        <p><a href="../indexProyectoTema3.php">Alex Asensio Sanchez</a></p>
+    </footer>
 </body>
 </html>
