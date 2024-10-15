@@ -14,9 +14,7 @@
      * @version 2024/10/1
      * @author Alex Asensio Sanchez                          
      */
-        echo(basename(__FILE__));
-        echo($_GLOBALS['file']);
-        //usar var local
+        echo(basename($_SERVER['PHP_SELF']));        
     ?>
     <footer>
         <p><a href="../indexProyectoTema3.php">Alex Asensio Sanchez</a></p>

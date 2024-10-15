@@ -2,10 +2,11 @@
 <html lang="es">
     <head>
         <title>Ej 01</title>
+        <link rel="stylesheet" href="../webroot/css/ejercicio21.css">
     </head>
     <body>
         <header>
-            <h1>Inicializar variables de los distintos tipos de datos básicos(string, int, float, bool) y mostrar los datos por pantalla (echo, print, printf, print_r,var_dump)</h1>
+            <h1>Inicializar variables y mostrar los datos por pantalla</h1>
         </header>
         <p>
             <?php

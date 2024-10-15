@@ -2,6 +2,8 @@
 <html lang="es">
     <head>
         <title>Ej 00</title>
+        <link rel="stylesheet" href="../webroot/css/ejercicio21.css">
+            
     </head>
     <body>
         <header>
@@ -17,6 +19,7 @@
                 phpinfo();
             ?>
         </p>
+        
         <footer>
             <p><a href="../indexProyectoTema3.php">Alex Asensio Sanchez</a></p>
         </footer>
