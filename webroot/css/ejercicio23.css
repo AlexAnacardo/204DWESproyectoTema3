@@ -1,14 +1,16 @@
             form{
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
+                flex-wrap: wrap;
                 justify-content: center;
                 align-items: center;
                 height: 100%;
                 font-size: 150%;
+                width: 100%;
             }
             
             label{
-                margin: 0 auto;
+                
                 margin-top: 0.5%;
 
             }
@@ -29,11 +31,60 @@
             }
             
             div{
+                height: 10%;
+                /*width: 30%;*/
+                width:100%;
+                display: flex;
+                flex-direction: row;                
+                align-items: center;
+                
+            }
+            
+            div label,input{
+                
+                margin: 0% 20%;
+            }
+            
+            #enviar{
+                width: 100%;
+                height: 40%;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            
+                                    
+            #fechaNac input{
+                 margin-left: 21.7%;
+            }
+            
+            #fechaActual input{
+                margin-left: 17.6%;
+            }
+            
+            #nombre label, input{
+                
+            }
+            
+            #boton{
+                font-size: 100%;
+                padding: 1% 2%;
+                background-color: greenyellow;
+            }
+            
+            #respuesta{
                 height: 100%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                align-items: center;
+            }
+            
+            #errorFecha{
+                font-size: 60%;               
+            }
+            
+            div p{                
+                margin-left: -17%;
             }
             /*Encabezado*/
 
@@ -50,6 +101,7 @@
             body{                              
                 display: flex;
                 flex-direction: column;
+                justify-content: center;                
                 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;                
                 height: 100%;   
 
@@ -57,7 +109,8 @@
             main{
                 display: flex;
                 margin: 3% auto;
-                height: 100%;      
+                height: 100%;  
+                width: 94%;
                 align-items: center;    
                 border-radius: 9%;
                 padding: 3%;

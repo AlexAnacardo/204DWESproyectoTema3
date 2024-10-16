@@ -2,6 +2,7 @@
 <html lang="es">
     <head>
         <title>Ej 23</title>
+        <link rel="stylesheet" href="../webroot/css/ejercicio23.css">
     </head>
     <body>
         <header>
@@ -10,16 +11,15 @@
             <?php
                 /**
                  * @author Victor Garcia Gordon
-                 * @version Fecha de última modificación 15/10/2024
+                 * @version Fecha de última modificación 16/10/2024
                  */
                  
                 //Incluimos una libreria externa
                 require_once('../core/231018libreriaValidacion.php');
-                
-                //Declaramos los arrays de errores y de datos enviados asi como un comprobador que mientras todo vaya correctamentem tendra valor de true
-                $aErrores=[];
-                $aRespuestas=[];
-                $entradaOK=true;
+                                
+                $aErrores=[]; //Array que almacena errores
+                $aRespuestas=[]; //Array que almacena las respuestas enviadas
+                $entradaOK=true; //Array 
                 
                 // Verifica si el formulario ha sido enviado
                 if (isset($_REQUEST['enviar'])) {
@@ -27,7 +27,7 @@
                         //en caso de haber un error en la entrada se añadira al array, en caso de no haber error se añadira un valor nulo
                         $aErrores=[ 
                             'nombre' => validacionFormularios::comprobarAlfabetico($_REQUEST['nombre'], 1000, 1, 1),
-                            'edad' => validacionFormularios::validarFecha($_REQUEST['fecha']),
+                            'edad' => validacionFormularios::comprobarEntero($_REQUEST['edad']),
                         ];                        
                         
                         //Recorremos el array de errores, si hay algun error, el comprobador cambia a false
@@ -41,47 +41,60 @@
                         $entradaOK = false;
                 }
 
-                //Tratamiento del formulario
+                //Si entradaOK tiene el valor true porque se  han introducido datos y estos han sido validados, los mismos se mostraran por pantalla asi
                 if ($entradaOK) {
                         //Almacenamos el valor de las respuestas en el array
                         $aRespuestas = [
-                                'nombre' => $_REQUEST['nombre'],
-                                'fecha' => $_REQUEST['fecha'],
+                                'Nombre' => $_REQUEST['nombre'],
+                                'Edad' => $_REQUEST['edad'],                            
                         ];
 
                         //Mostramos las respuestas por pantalla
+                        ?>
+                        <div id="respuesta">                        
+                        <?php
                         echo "<h1>Respuestas:</h1>";
                         foreach ($aRespuestas as $key => $value) {
                                 echo "$key : $value <br>";
                         }
+                        ?>
+                        </div>
+                        <?php
                 } else {
-                        //Mostrar el formulario hasta que lo rellenemos correctamente
+                        //Mostrara el formulario hasta que lo rellenemos correctamente
                 ?>
 
             <main>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" novalidate>
-                        <label for="nombre">Nombre:</label><br>
-                        <input type="text" id="nombre" name="nombre" style="background-color: yellow"><br>
-                        <?php if (!empty($aErrores["nombre"])) { ?>
-                                <!--Si hay algun error almacenado en el array, el mensaje del mismo se mostrara, esto para cada caso-->
-                                <span><?php echo $aErrores["nombre"]; ?></span>
-                        <?php } ?>
-                        <br><label for="fecha">Fecha Nacimiento:</label><br>
-                        <input type="text" id="fecha" name="fecha"><br>
+                        <div id="nombre">
+                            <label for="nombre">Nombre:</label><br>
+                            <input type="text" id="nombre" name="nombre" style="background-color: yellow"><br>
+                            <?php if (!empty($aErrores["nombre"])) { ?>
+                                    <!--Si hay algun error almacenado en el array, el mensaje del mismo se mostrara, esto para cada caso-->
+                                    <p style="color: red"><?php echo $aErrores["nombre"]; ?></p>
+                            <?php } ?>
+                        </div>
+                        <div id="fechaNac">
+                            <label for="edad">Edad:</label>
+                            <input type="text" id="edad" name="edad"><br>
+
+                            <?php if (!empty($aErrores["edad"])) { ?>
+                                    <p id="errorFecha" style="color:red"><?php echo $aErrores["edad"]; ?></p>
+                            <?php } ?>
+                        </div>
+                        <div id="fechaActual">
+                            <label for="fecha">Fecha actual:</label><br>
+                            <?php
+                                $fechaActual=new DateTime('now', new DateTimeZone("Europe/Madrid"));
+
+                                $fechaActual=$fechaActual->format("Y").'-'.$fechaActual->format("m").'-'.$fechaActual->format("j");                                  
+                            ?>
                         
-                        <?php if (!empty($aErrores["fecha"])) { ?>
-                                <span><?php echo $aErrores["edad"]; ?></span>
-                        <?php } ?>
-                        <br>
-                        <label for="fecha">Fecha actual:</label><br>
-                        <?php
-                            $fechaActual=new DateTime('now', new DateTimeZone("Europe/Madrid"));
-                            
-                            $fechaActual=$fechaActual->format("Y").'-'.$fechaActual->format("m").'-'.$fechaActual->format("j");                                  
-                        ?>
-                        <input type="text" id="fecha" name="fecha" disabled value="<?php echo(date("Y-m-d"))?>"><br>
-                        <br>
-                        <input name="enviar" type="submit" value="Enviar">
+                            <input type="text" id="fecha" name="fecha" disabled value="<?php echo(date("Y-m-d"))?>">
+                        </div>
+                        <div id="enviar">
+                            <input id="boton" name="enviar" type="submit" value="Enviar">
+                        </div>
                 </form>
                 <?php
                 }
