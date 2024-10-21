@@ -18,12 +18,12 @@
                 require_once('../core/231018libreriaValidacion.php');
                  
                 $aErrores=[  //Array de errores
-                    'nombre'=>"",
-                    'edad'=>"",
+                    'nombre'=>" ",
+                    'edad'=>" ",
                 ]; 
                 $aRespuestas=[  //Array de respuestas
-                    'nombre'=>"",
-                    'edad'=>"",
+                    'nombre'=>" ",
+                    'edad'=>" ",
                 ]; 
                 $entradaOK=true; //Booleano que confirma que todo va bien
                 
@@ -66,27 +66,33 @@
                         
                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" novalidate>
                         <div id="datos">
-                            <label for="nombre">
-                                <p>Nombre:</p> <input type="text" id="nombre" name="nombre" style="background-color: yellow "/>
-                            </label>
-                            <?php if (!empty($aErrores["nombre"])) { ?>
-                                <!--Si hay algun error almacenado en el array, el mensaje del mismo se mostrara, esto para cada caso-->
-                                <p style="color: red"><?php echo $aErrores["nombre"]; ?></p>
-                            <?php } ?>
+                            <div id="nombre">
+                                <label for="nombre">
+                                    <p>Nombre:</p> <input type="text" id="nombre" name="nombre" style="background-color: yellow" value="<?php echo (!$aErrores['nombre']=="" ? '':$_REQUEST['nombre']); ?>"/><!-- Si el array de errores esta vacio y la variable "nombre" tiene un valor ya validado, este aparecera en el campo de haber un error en otro de los campos -->
+                                </label>                
+                                <?php if (!empty($aErrores["nombre"])) { ?>
+                                    <!--Si hay algun error almacenado en el array, el mensaje del mismo se mostrara, esto para cada caso-->
+                                    <p class="error" style="color: red"><?php echo $aErrores["nombre"]; ?></p>
+                                <?php } ?>
+                            </div>
                             <label for="edad">
-                                Edad: <input type="text" id="edad" name="edad"/>
-                            </label>
+                                <p>Edad:</p> <input type="text" id="edad" name="edad" value="<?php echo (!$aErrores['edad']=="" ? '':$_REQUEST['edad']); ?>"/><!-- Si el array de errores esta vacio y la variable "nombre" tiene un valor ya validado, este aparecera en el campo de haber un error en otro de los campos -->
+                            
                             <?php if (!empty($aErrores['edad'])){ ?>
                                 <p style="color: red"><?php echo($aErrores['edad'])?></p>
                             <?php } ?>
+                            </label>
                         </div>
                         <input type="submit" id="enviar" name="enviar" value="Enviar"/>                        
                     </form>       
                     <?php
                 }
             ?>
+
         <footer>
-            <p><a href="../indexProyectoTema3.php">Alex Asensio Sanchez</a></p>
+            <p><a href="../../index.html">Alex Asensio Sanchez</a></p>
+            <p><a href="../indexProyectoTema3.php">Tema 3</a></p>
+            <p><a target="blank" href="https://github.com/AlexAnacardo/204DWESProyectoTema3/tree/developer">GitHub del repositorio</a></p>
         </footer>
     </body>
 </html>

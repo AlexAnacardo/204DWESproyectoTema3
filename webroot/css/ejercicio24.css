@@ -11,6 +11,7 @@
                 
             #datos label{
                 margin: 0 auto;
+                width: fit-content;
             }
             
             label{
@@ -18,6 +19,9 @@
                 flex-direction: row;
                 align-items: center;
                 justify-content: center;
+                width: 50%;
+                height: 10%;
+                background-color: blue;
             }
             
             *{
@@ -28,14 +32,21 @@
                 height: 100%;
             }
             
-            div{
+            #nombre{
+                width: 30%;
+                display: flex;
+                background-color: green;
+                
+            }
+            
+            #datos{
                 height: 70%;
                 /*width: 30%;*/
                 width:100%;
                 display: flex;
                 flex-direction: row;                
                 align-items: center;
-                
+                margin: 0 auto;                
             }
             
             
@@ -78,10 +89,11 @@
                 font-size: 60%;               
             }
             
-            
-            div p{                
-                margin-left: -17%;
+            .error{                
+                width: fit-content;
+                
             }
+            
             /*Encabezado*/
 
             header h1{
@@ -126,7 +138,7 @@
                 color: rgb(16, 9, 114);
                 font-weight: bold;               
             }
-            p{
+            footer p{
                 text-align: center;                
                 width: fit-content;   
                 margin: 2% 1.5%;  
