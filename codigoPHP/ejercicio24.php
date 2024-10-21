@@ -20,10 +20,16 @@
                 $aErrores=[  //Array de errores
                     'nombre'=>" ",
                     'edad'=>" ",
+                    'fechaNac'=>" ",
+                    'email'=>" ",
+                    'real'=>" ",
                 ]; 
                 $aRespuestas=[  //Array de respuestas
                     'nombre'=>" ",
                     'edad'=>" ",
+                    'fechaNac'=>" ",
+                    'email'=>" ",
+                    'real'=>0.0,
                 ]; 
                 $entradaOK=true; //Booleano que confirma que todo va bien
                 
@@ -33,6 +39,9 @@
                         $aErrores=[ 
                             'nombre' => validacionFormularios::comprobarAlfabetico($_REQUEST['nombre'], 1000, 1, 1),
                             'edad' => validacionFormularios::comprobarEntero($_REQUEST['edad']),
+                            'fechaNac'=> validacionFormularios::validarFecha($_REQUEST['fechaNac'], '01/01/2200'),
+                            'email'=> validacionFormularios::validarEmail($_REQUEST['email']),
+                            'real'=> validacionFormularios::comprobarFloat($_REQUEST['real']),
                         ];   
                     
                     //Se recorre el array, si hay errores el booleano entradaOK sera false y el formulario no se enviara
@@ -49,6 +58,9 @@
                 if($entradaOK){
                     $aRespuestas['nombre']=$_REQUEST['nombre'];
                     $aRespuestas['edad']=$_REQUEST['edad'];
+                    $aRespuestas['fechaNac']=$_REQUEST['fechaNac'];
+                    $aRespuestas['email']=$_REQUEST['email'];
+                    $aRespuestas['real']=$_REQUEST['real'];
                     
                 ?>
                     <div id="respuesta">                        
@@ -64,27 +76,51 @@
                 else{
                 ?>
                         
-                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" novalidate>
-                        <div id="datos">
-                            <div id="nombre">
-                                <label for="nombre">
-                                    <p>Nombre:</p> <input type="text" id="nombre" name="nombre" style="background-color: yellow" value="<?php echo (!$aErrores['nombre']=="" ? '':$_REQUEST['nombre']); ?>"/><!-- Si el array de errores esta vacio y la variable "nombre" tiene un valor ya validado, este aparecera en el campo de haber un error en otro de los campos -->
-                                </label>                
-                                <?php if (!empty($aErrores["nombre"])) { ?>
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" novalidate>
+                        <div id="divNombre">
+                            <label for="nombre">Nombre:</label><br>
+                            <input type="text" id="nombre" name="nombre" style="background-color: yellow" value="<?php echo (!$aErrores['nombre'] == "" ? '' : $_REQUEST['nombre']); ?>"/><!-- Si el array de errores esta vacio y la variable "nombre" tiene un valor ya validado, este aparecera en el campo de haber un error en otro de los campos -->
+                            <?php if (!empty($aErrores["nombre"])) { ?>
                                     <!--Si hay algun error almacenado en el array, el mensaje del mismo se mostrara, esto para cada caso-->
-                                    <p class="error" style="color: red"><?php echo $aErrores["nombre"]; ?></p>
-                                <?php } ?>
-                            </div>
-                            <label for="edad">
-                                <p>Edad:</p> <input type="text" id="edad" name="edad" value="<?php echo (!$aErrores['edad']=="" ? '':$_REQUEST['edad']); ?>"/><!-- Si el array de errores esta vacio y la variable "nombre" tiene un valor ya validado, este aparecera en el campo de haber un error en otro de los campos -->
-                            
-                            <?php if (!empty($aErrores['edad'])){ ?>
-                                <p style="color: red"><?php echo($aErrores['edad'])?></p>
+                                    <p style="color: red"><?php echo $aErrores["nombre"]; ?></p>
                             <?php } ?>
-                            </label>
                         </div>
-                        <input type="submit" id="enviar" name="enviar" value="Enviar"/>                        
-                    </form>       
+                        <div id="divEdad">
+                            <label for="edad">Edad:</label><br>
+                            <input type="text" id="edad" name="edad" value="<?php echo (!$aErrores['edad'] == "" ? '' : $_REQUEST['edad']); ?>"/><!-- Si el array de errores esta vacio y la variable "nombre" tiene un valor ya validado, este aparecera en el campo de haber un error en otro de los campos -->
+
+                            <?php if (!empty($aErrores["edad"])) { ?>
+                                    <p id="errorFecha" style="color:red"><?php echo $aErrores["edad"]; ?></p>
+                            <?php } ?>
+                        </div>
+                        <div id="divFechaNacimiento">
+                            <label for="fechaNac">Fecha de nacimiento:</label><br>
+                            <input type="date" id="fechaNac" name="fechaNac" value="<?php echo (!$aErrores['fechaNac'] == "" ? '' : $_REQUEST['fechaNac']); ?>"/><!-- Si el array de errores esta vacio y la variable "nombre" tiene un valor ya validado, este aparecera en el campo de haber un error en otro de los campos -->
+
+                            <?php if (!empty($aErrores['fechaNac'])) { ?>
+                                    <p id="errorFecha" style="color:red"><?php echo $aErrores['fechaNac']; ?></p>
+                            <?php } ?>
+                        </div>
+                        <div id="divEmail">
+                            <label for="email">Email personal:</label><br>
+                            <input type="mail" id="email" name="email" value="<?php echo (!$aErrores['email'] == "" ? '' : $_REQUEST['email']); ?>"/><!-- Si el array de errores esta vacio y la variable "nombre" tiene un valor ya validado, este aparecera en el campo de haber un error en otro de los campos -->
+
+                            <?php if (!empty($aErrores['email'])) { ?>
+                                    <p id="errorEmail" style="color:red"><?php echo $aErrores['email']; ?></p>
+                            <?php } ?>
+                        </div>
+                        <div id="divReal">
+                            <label for="real">Mete un float:</label><br>
+                            <input type="text" id="real" name="real" value="<?php echo (!$aErrores['real'] == "" ? '' : $_REQUEST['real']); ?>"/><!-- Si el array de errores esta vacio y la variable "nombre" tiene un valor ya validado, este aparecera en el campo de haber un error en otro de los campos -->
+
+                            <?php if (!empty($aErrores['real'])) { ?>
+                                    <p id="errorReal" style="color:red"><?php echo $aErrores['real']; ?></p>
+                            <?php } ?>
+                        </div>
+                        <div id="enviar">
+                            <input id="boton" name="enviar" type="submit" value="Enviar">
+                        </div>
+                </form>     
                     <?php
                 }
             ?>

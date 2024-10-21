@@ -1,4 +1,4 @@
-           form{
+            form{
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
@@ -7,22 +7,32 @@
                 height: 100%;
                 font-size: 150%;
                 width: 100%;
-            }            
-                
-            #datos label{
-                margin: 0 auto;
-                width: fit-content;
             }
             
-            label{
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
-                width: 50%;
-                height: 10%;
-                background-color: blue;
+            label{                
+                margin-top: 0.5%;
+                width: fit-content;
+                margin-left: 40%;
             }
+            
+            input{                
+                margin-top: 0.5%;
+            }
+            
+            #divNombre input{
+                margin-left: 5%;
+            }
+            
+            #divEdad input{
+                margin-left: 6.5%;
+            }
+            
+            button{
+                width: fit-content;
+                margin-top: 1%;
+            }
+            
+            
             
             *{
                 margin: 0;
@@ -32,47 +42,32 @@
                 height: 100%;
             }
             
-            #nombre{
-                width: 30%;
-                display: flex;
-                background-color: green;
-                
-            }
-            
-            #datos{
-                height: 70%;
+            div{
+                height: 10%;
                 /*width: 30%;*/
                 width:100%;
                 display: flex;
                 flex-direction: row;                
                 align-items: center;
-                margin: 0 auto;                
+                
             }
             
             
-            
             #enviar{
-                width: 15%;
-                height: 10%;
+                width: 100%;
+                height: 40%;
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
             }
             
-                                    
-            #fechaNac input{
-                 margin-left: 21.7%;
-            }
             
             #fechaActual input{
                 margin-left: 17.6%;
             }
             
-            #nombre label, input{
-                
-            }
             
-            #enviar{
+            #boton{
                 font-size: 100%;
                 padding: 1% 2%;
                 background-color: greenyellow;
@@ -87,11 +82,6 @@
             
             #errorFecha{
                 font-size: 60%;               
-            }
-            
-            .error{                
-                width: fit-content;
-                
             }
             
             /*Encabezado*/
@@ -138,7 +128,7 @@
                 color: rgb(16, 9, 114);
                 font-weight: bold;               
             }
-            footer p{
+            p{
                 text-align: center;                
                 width: fit-content;   
                 margin: 2% 1.5%;  
