@@ -183,6 +183,12 @@
                         <td></td>
                         <td></td>
                     </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>Ejercicio extra</td>
+                        <td><a href="codigoPHP/ejercicio27.php"><image src="webroot/images/play.png" heigth="25%" width="25%"/></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio27.php"><image src="webroot/images/ojo.png" heigth="30%" width="30%"/></a></td>
+                    </tr>
                 </tbody>
             </table>
         </main>

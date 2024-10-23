@@ -92,7 +92,7 @@
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" novalidate>
                         <div id="divNombre">
                             <label for="nombre">Nombre:</label><br>
-                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" style="background-color: yellow" value="<?php echo (isset($_REQUEST['nombre']) ? $_REQUEST['nombre'] : ''); ?>"/><!-- Si el array de errores esta vacio y la variable "nombre" tiene un valor ya validado, este aparecera en el campo de haber un error en otro de los campos -->
+                            <input type="text" id="nombre" name="nombre" placeholder="Ej: Alex" style="background-color: yellow" value="<?php echo (isset($_REQUEST['nombre']) ? $_REQUEST['nombre'] : ''); ?>"/><!-- Si el array de errores esta vacio y la variable "nombre" tiene un valor ya validado, este aparecera en el campo de haber un error en otro de los campos -->
                             <?php if (!empty($aErrores["nombre"])) { ?>
                                     <!--Si hay algun error almacenado en el array, el mensaje del mismo se mostrara, esto para cada caso-->
                                     <p style="color: red"><?php echo $aErrores["nombre"]; ?></p>
@@ -100,7 +100,7 @@
                         </div>
                         <div id="divEdad">
                             <label for="edad">Edad:</label><br>
-                            <input type="text" id="edad" name="edad" value="<?php echo (isset($_REQUEST['edad']) ? $_REQUEST['edad'] : ''); ?>"/><!-- Si el array de errores esta vacio y la variable "nombre" tiene un valor ya validado, este aparecera en el campo de haber un error en otro de los campos -->
+                            <input type="text" id="edad" name="edad" placeholder="Ej: 1" value="<?php echo (isset($_REQUEST['edad']) ? $_REQUEST['edad'] : ''); ?>"/><!-- Si el array de errores esta vacio y la variable "nombre" tiene un valor ya validado, este aparecera en el campo de haber un error en otro de los campos -->
 
                             <?php if (!empty($aErrores["edad"])) { ?>
                                     <p id="errorEdad" style="color:red"><?php echo $aErrores["edad"]; ?></p>
@@ -116,7 +116,7 @@
                         </div>
                         <div id="divEmail">
                             <label for="email">Email personal:</label><br>
-                            <input type="mail" id="email" name="email" placeholder="xxxxxx@xxxx.com" value="<?php echo (isset($_REQUEST['email']) ? $_REQUEST['email'] : ''); ?>"/><!-- Si el array de errores esta vacio y la variable "nombre" tiene un valor ya validado, este aparecera en el campo de haber un error en otro de los campos -->
+                            <input type="mail" id="email" name="email" placeholder="Ej: correo@gmail.es" value="<?php echo (isset($_REQUEST['email']) ? $_REQUEST['email'] : ''); ?>"/><!-- Si el array de errores esta vacio y la variable "nombre" tiene un valor ya validado, este aparecera en el campo de haber un error en otro de los campos -->
 
                             <?php if (!empty($aErrores['email'])) { ?>
                                     <p id="errorEmail" style="color:red"><?php echo $aErrores['email']; ?></p>
@@ -124,7 +124,7 @@
                         </div>
                         <div id="divReal">
                             <label for="real">Mete un float:</label><br>
-                            <input type="text" id="real" name="real" value="<?php echo (isset($_REQUEST['real']) ? $_REQUEST['real'] : ''); ?>"/><!-- Si el array de errores esta vacio y la variable "nombre" tiene un valor ya validado, este aparecera en el campo de haber un error en otro de los campos -->
+                            <input type="text" id="real" name="real" placeholder="Ej: 1.2" value="<?php echo (isset($_REQUEST['real']) ? $_REQUEST['real'] : ''); ?>"/><!-- Si el array de errores esta vacio y la variable "nombre" tiene un valor ya validado, este aparecera en el campo de haber un error en otro de los campos -->
 
                             <?php if (!empty($aErrores['real'])) { ?>
                                     <p id="errorReal" style="color:red"><?php echo $aErrores['real']; ?></p>
@@ -140,7 +140,7 @@
                         </div>
                         <div id="divUrl">
                             <label for="url">Introduce una url:</label><br>
-                            <input type="url" id="url" name="url" placeholder="http://..." value="<?php echo (isset($_REQUEST['url']) ? $_REQUEST['url'] : ''); ?>"/><!-- Si el array de errores esta vacio y la variable "nombre" tiene un valor ya validado, este aparecera en el campo de haber un error en otro de los campos -->
+                            <input type="url" id="url" name="url" placeholder="Ej: http://......" value="<?php echo (isset($_REQUEST['url']) ? $_REQUEST['url'] : ''); ?>"/><!-- Si el array de errores esta vacio y la variable "nombre" tiene un valor ya validado, este aparecera en el campo de haber un error en otro de los campos -->
 
                             <?php if (!empty($aErrores['url'])) { ?>
                                     <p id="errorUrl" style="color:red"><?php echo $aErrores['url']; ?></p>
