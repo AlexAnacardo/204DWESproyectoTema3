@@ -27,18 +27,26 @@
                     'animo'=>'',
                 ]; 
                 $aRespuestas=[  //Array de respuestas
-                    'nombre'=>" ",                    
-                    'fechaNac'=>" ",
-                    'curso'=>" ",
+                    'nombre'=>'',                    
+                    'fechaNac'=>'',
+                    'sientoHoy'=>'',
+                    'curso'=>'',
+                    'navidad'=>'',
+                    'animo'=>'',
                 ]; 
                  
+                $aOpcionesLista=['Ni idea','Con la familia','De fiesta','Trabajando','Estudiando'];
+                $aOpcionesRadio=['Muy mal','Mal','Regular','Bien','Muy bien'];
                 //Cuando se envien los datos, se entrara aqui para validarlos
                 if(isset($_REQUEST['enviar'])){
                         
                         $aErrores=[ 
-                            'nombre' => validacionFormularios::comprobarAlfabetico($_REQUEST['nombre'], 1000, 1, 1),
-                            'curso' => validacionFormularios::comprobarEntero($_REQUEST['curso']),
-                            'fechaNac'=> validacionFormularios::validarFecha($_REQUEST['fechaNac'], '01/01/2200'),                                                  
+                            'nombre' => validacionFormularios::comprobarAlfabetico($_REQUEST['nombre'], 1000, 1, 1),                                                       
+                            'fechaNac'=> validacionFormularios::validarFecha($_REQUEST['fechaNac'], '01/01/2200', '01/01/1900', 1),
+                            'sientoHoy'=> validacionFormularios::validarElementoEnLista($_REQUEST['sientoHoy'], $aOpcionesRadio),
+                            'curso' => validacionFormularios::comprobarEntero($_REQUEST['curso'], 10, 0, 1),
+                            'navidad'=> validacionFormularios::validarElementoEnLista($_REQUEST['navidad'], $aOpcionesLista),
+                            'animo'=> validacionFormularios::comprobarAlfaNumerico($_REQUEST['animo'], 1000, 1, 1)
                         ];   
                     
                      //Recorremos el array de errores 
@@ -55,9 +63,12 @@
                 }
                 //Se entrara aqui si los datos han sido introducidos y validados
                 if($entradaOK){
-                    $aRespuestas['nombre']=$_REQUEST['nombre'];
+                    $aRespuestas['nombre']=$_REQUEST['nombre'];                    
+                    $aRespuestas['fechaNac']=new DateTime($_REQUEST['fechaNac']); 
+                    $aRespuestas['sientoHoy']=$_REQUEST['sientoHoy'];
                     $aRespuestas['curso']=$_REQUEST['curso'];
-                    $aRespuestas['fechaNac']=new DateTime($_REQUEST['fechaNac']);                                    
+                    $aRespuestas['navidad']=$_REQUEST['navidad'];
+                    $aRespuestas['animo']=$_REQUEST['animo'];
                     
                 ?>
                     <div id="respuesta">                        
@@ -99,7 +110,7 @@
                             <label for="muyMal">Muy mal</label>
                             <input type="radio" id="mal" name="sientoHoy" value="Mal">
                             <label for="mal">Mal</label>
-                            <input type="radio" id="regular" name="sientoHoy" value="Regular">
+                            <input type="radio" id="regular" name="sientoHoy" value="Regular" checked>
                             <label for="regular">Regular</label>
                             <input type="radio" id="bien" name="sientoHoy" value="Bien">
                             <label for="bien">Bien</label>
@@ -131,6 +142,9 @@
                         <div id="divEstadoAnimo">
                             <label for="animo">Describe brevemente tu estado de animo</label>
                             <textarea id="animo" name="animo"></textarea>
+                            <?php if (!empty($aErrores["animo"])) { ?>
+                                    <p id="errorAnimo" style="color:red"><?php echo $aErrores["animo"]; ?></p>
+                            <?php } ?>
                         </div>
                         
                         <div id="enviar">
