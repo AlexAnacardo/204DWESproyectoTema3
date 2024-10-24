@@ -5,13 +5,8 @@ form{
 
     
 }
-
 div{  
     width: 100%;
-}
-form div{
-    height: 10%;
-    margin: 2% 0%;
 }
 
 label{
@@ -26,15 +21,18 @@ input{
 
 #divNombre{
     height: 10%;
+    display: flex;    
+    align-items: center;
 }
 
 #divNombre input{
     margin-left: 5%;
 }
 
-#divFechaNac{
-    margin-top: 3%;
+#divFechaNac{    
     height: 10%;
+    display: flex;    
+    align-items: center;
 }
 
 #divFechaNac input{
@@ -42,36 +40,90 @@ input{
 }
 
 #divSientoHoy{
-    height: 18%;
+    height: 15%;  
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 0.7%;
 }
 #divSientoHoy p{
     width: 100%;
     margin-left: -4.1%;
+    height: 17%;
 }
+
+#cabeceraSientoHoy{
+    height: 15%;
+    margin-bottom: 3%;
+}
+
+#cabeceraSientoHoy p{
+    margin-top: 0%;
+}
+
 #divSientoHoy label{
-    margin-left: 0.5%;
+    margin-left: 0%;
 }
 
 #divSientoHoy input{
-    margin-left: 10%;
+    margin-left: 8%;
     margin-right: 0%;
+    width: 2%;    
 }
 
 #radios{
     width: 60%;
-    height: 30%;
-    margin: 0 auto;
-    margin-top: -1%;  
+    height: 110%;    
+    margin-top: -2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contenedorSientoHoy{
+    display: block;
+    margin-left: 30%;
+}
+
+#errorSientoHoy{   
+    color: red;  
+    margin-top: -2%;
+    height: 70%;
+    width: fit-content;
+    margin-left: 60%;
+}
+#errorSientoHoy p{   
+    height: 100%;
 }
 
 #divCurso{
-    margin-top: -1%;
+    display: flex;    
+    align-items: center;
+}
+
+#divNavidad{
+    display: flex;    
+    align-items: center;
+    margin-top: 4%;
+}
+
+#divEstadoAnimo{
+    display: flex;    
+    align-items: center;
+    height: 5%;
+    margin-top: 3%;
 }
 
 
+
+#divCurso{
+    margin-top: 3%;
+    height: 5%;
+}
+
 button{
     width: fit-content;
-    margin-top: 1%;
+    margin-top: 1%;    
 }
 
 
@@ -90,7 +142,8 @@ html{
 #enviar{
     width: 100%;
     height: 8%;
-
+    text-align: center;
+    margin-top: 1.6%;
 }
 
 

@@ -98,7 +98,7 @@
                 
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" novalidate>
                         <div id="divNombre">
-                            <label for="nombre">Nombre y apellidos del alumno:  ARRAY PARA ELEMENTOS DE LA LISTA Y RADIO</label>
+                            <label for="nombre">Nombre y apellidos del alumno:</label>
                             <input type="text" id="nombre" name="nombre" placeholder="Ej: Alex Asensio Sanchez" style="background-color: yellow" value="<?php echo (isset($_REQUEST['nombre']) ? $_REQUEST['nombre'] : ''); ?>"/><!-- Si el array de errores esta vacio y la variable "nombre" tiene un valor ya validado, este aparecera en el campo de haber un error en otro de los campos -->
                             <?php if (!empty($aErrores["nombre"])) { ?>
                                     <!--Si hay algun error almacenado en el array, el mensaje del mismo se mostrara, esto para cada caso-->
@@ -115,22 +115,28 @@
                         </div>
                     
                     <div id="divSientoHoy">
-                        <p>¿Cómo te sientes hoy?</p>
-                        <div id="radios">
-                            <input type="radio" id="muyMal" name="sientoHoy" value="Muy mal">
-                            <label for="muyMal">Muy mal</label>
-                            <input type="radio" id="mal" name="sientoHoy" value="Mal">
-                            <label for="mal">Mal</label>
-                            <input type="radio" id="regular" name="sientoHoy" value="Regular" >
-                            <label for="regular">Regular</label>
-                            <input type="radio" id="bien" name="sientoHoy" value="Bien">
-                            <label for="bien">Bien</label>
-                            <input type="radio" id="muyBien" name="sientoHoy" value="Muy bien">
-                            <label for="muyBien">Muy bien</label>
+                        <div id="cabeceraSientoHoy">
+                            <p>¿Cómo te sientes hoy?</p>
                         </div>
-                        <?php if (!empty($aErrores["sientoHoy"])) { ?>
-                                    <p id="errorSientoHoy" style="color:red"><?php echo $aErrores["sientoHoy"]; ?></p>
-                        <?php } ?>
+                        <div id="contenedorSientoHoy">
+                            <div id="radios">
+                                <input type="radio" id="muyMal" name="sientoHoy" value="Muy mal">
+                                <label for="muyMal">Muy mal</label>
+                                <input type="radio" id="mal" name="sientoHoy" value="Mal">
+                                <label for="mal">Mal</label>
+                                <input type="radio" id="regular" name="sientoHoy" value="Regular" >
+                                <label for="regular">Regular</label>
+                                <input type="radio" id="bien" name="sientoHoy" value="Bien">
+                                <label for="bien">Bien</label>
+                                <input type="radio" id="muyBien" name="sientoHoy" value="Muy bien">
+                                <label for="muyBien">Muy bien</label>
+                            </div>
+                            <div id="errorSientoHoy">
+                                <?php if (!empty($aErrores["sientoHoy"])) { ?>
+                                            <p><?php echo $aErrores["sientoHoy"]; ?></p>
+                                <?php } ?>
+                            </div>
+                        </div>
                     </div>
                         
                         <div id="divCurso">
@@ -145,11 +151,18 @@
                         <div id="divNavidad">
                             <label for="navidad">¿Cómo se presentan las vacaciones de navidad?</label>
                             <select id="navidad" name="navidad">
-                                <option value="Ni idea">Ni idea</option>
+                                <!--<option value="Ni idea">Ni idea</option>
                                 <option value="Con la familia">Con la familia</option>
                                 <option value="De fiesta">De fiesta</option>
                                 <option value="Trabajando">Trabajando</option>
-                                <option value="Estudiando">Estudiando</option>
+                                <option value="Estudiando">Estudiando</option>-->
+                                <?php
+                                    foreach($aOpcionesLista as $valor){
+                                        ?>
+                                <option value="<?php echo($valor) ?>"><?php echo($valor) ?></option>
+                                        <?php
+                                    }
+                                ?>
                             </select>
                         </div>
                         
