@@ -189,6 +189,18 @@
                         <td><a href="codigoPHP/ejercicio27.php"><image src="webroot/images/play.png" heigth="25%" width="25%"/></a></td>
                         <td><a href="mostrarcodigo/muestraEjercicio27.php"><image src="webroot/images/ojo.png" heigth="30%" width="30%"/></a></td>
                     </tr>
+                    <tr>
+                        <td>Extra 1</td>
+                        <td>Formulario ChatGPT</td>
+                        <td><a href="codigoPHP/pruebaChatGPT.php"><image src="webroot/images/play.png" heigth="25%" width="25%"/></a></td>
+                        <td><a href="mostrarcodigo/pruebaChatGPT.php"><image src="webroot/images/ojo.png" heigth="30%" width="30%"/></a></td>
+                    </tr>
+                    <tr>
+                        <td>Extra 2</td>
+                        <td>Formulario Copilot</td>
+                        <td><a href="codigoPHP/pruebaCopilot.php"><image src="webroot/images/play.png" heigth="25%" width="25%"/></a></td>
+                        <td><a href="mostrarcodigo/pruebaCopilot.php"><image src="webroot/images/ojo.png" heigth="30%" width="30%"/></a></td>
+                    </tr>
                 </tbody>
             </table>
         </main>
