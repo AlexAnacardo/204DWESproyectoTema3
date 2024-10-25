@@ -39,13 +39,13 @@
                 $aOpcionesRadio=['Muy mal','Mal','Regular','Bien','Muy bien'];
                 
                 $oFechaHoraActual= new DateTime("now");
-                $sPruebaFecha=$oFechaHoraActual->format('m/d/Y'); //Declaramos la fecha actual, esto se usara varias veces en la pagina
+                $scadenaFecha=$oFechaHoraActual->format('m/d/Y'); //Declaramos la fecha actual, esto se usara varias veces en la pagina
                 //Cuando se envien los datos, se entrara aqui para validarlos
                 if(isset($_REQUEST['enviar'])){
                         
                         $aErrores=[ 
                             'nombre' => validacionFormularios::comprobarAlfabetico($_REQUEST['nombre'], 1000, 1, 1),                                                       
-                            'fechaNac'=> validacionFormularios::validarFecha($_REQUEST['fechaNac'], $sPruebaFecha, '01/01/1900', 1),                            
+                            'fechaNac'=> validacionFormularios::validarFecha($_REQUEST['fechaNac'], $scadenaFecha, '01/01/1900', 1),                            
                             'sientoHoy'=> !isset($_REQUEST['sientoHoy']) ? "Debe elegir una opcion" : validacionFormularios::validarElementoEnLista($_REQUEST['sientoHoy'], $aOpcionesRadio), //IMPORTANTE, el formato de fecha para el validador es MES/DIA/AÑO
                             'curso' => validacionFormularios::comprobarEntero($_REQUEST['curso'], 10, 0, 1),
                             'navidad'=> validacionFormularios::validarElementoEnLista($_REQUEST['navidad'], $aOpcionesLista),
@@ -131,12 +131,13 @@
                                 <input type="radio" id="muyBien" name="sientoHoy" value="Muy bien">
                                 <label for="muyBien">Muy bien</label>
                             </div>
-                            <div id="errorSientoHoy">
+                            
+                        </div>
+                        <div id="errorSientoHoy">
                                 <?php if (!empty($aErrores["sientoHoy"])) { ?>
                                             <p><?php echo $aErrores["sientoHoy"]; ?></p>
                                 <?php } ?>
                             </div>
-                        </div>
                     </div>
                         
                         <div id="divCurso">
@@ -151,11 +152,6 @@
                         <div id="divNavidad">
                             <label for="navidad">¿Cómo se presentan las vacaciones de navidad?</label>
                             <select id="navidad" name="navidad">
-                                <!--<option value="Ni idea">Ni idea</option>
-                                <option value="Con la familia">Con la familia</option>
-                                <option value="De fiesta">De fiesta</option>
-                                <option value="Trabajando">Trabajando</option>
-                                <option value="Estudiando">Estudiando</option>-->
                                 <?php
                                     foreach($aOpcionesLista as $valor){
                                         ?>

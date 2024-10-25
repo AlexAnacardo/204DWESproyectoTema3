@@ -1,5 +1,5 @@
 form{
-    height: 72%;
+    height: 73.3%;
     font-size: 150%;
     width: 100%;
 
@@ -26,7 +26,7 @@ input{
 }
 
 #divNombre input{
-    margin-left: 5%;
+    margin-left: 1%;
 }
 
 #divFechaNac{    
@@ -54,7 +54,7 @@ input{
 
 #cabeceraSientoHoy{
     height: 15%;
-    margin-bottom: 3%;
+    margin-bottom: 5%;
 }
 
 #cabeceraSientoHoy p{
@@ -62,7 +62,7 @@ input{
 }
 
 #divSientoHoy label{
-    margin-left: 0%;
+    margin-left: 0%; 
 }
 
 #divSientoHoy input{
@@ -73,11 +73,11 @@ input{
 
 #radios{
     width: 60%;
-    height: 110%;    
+    height: 150%;
     margin-top: -2%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;    
 }
 
 #contenedorSientoHoy{
@@ -85,26 +85,39 @@ input{
     margin-left: 30%;
 }
 
+
 #errorSientoHoy{   
     color: red;  
     margin-top: -2%;
-    height: 70%;
+    height: 100%;
     width: fit-content;
-    margin-left: 60%;
+    margin-left: 80%;    
 }
 #errorSientoHoy p{   
     height: 100%;
+    width: fit-content;
 }
 
 #divCurso{
     display: flex;    
     align-items: center;
+    margin-top: 3%;
+    height: 5%;
+}
+
+#divCurso input{
+    margin-left: 1%;
 }
 
 #divNavidad{
     display: flex;    
     align-items: center;
     margin-top: 4%;
+}
+
+#divNavidad select{
+    margin-left: 1%;
+    margin-top: 0.5%;
 }
 
 #divEstadoAnimo{
@@ -114,12 +127,12 @@ input{
     margin-top: 3%;
 }
 
-
-
-#divCurso{
-    margin-top: 3%;
-    height: 5%;
+#divEstadoAnimo textarea{
+    margin-left: 1%;
+    margin-top: 1%;
+    width: 25%;
 }
+
 
 button{
     width: fit-content;
@@ -150,15 +163,27 @@ html{
 #boton{
     font-size: 100%;
     padding: 1% 2%;
-    background-color: greenyellow;
+    background-color: greenyellow;    
 }
 
 #respuesta{
-    height: 72%;
+    margin: 0 auto;
+    height: 73.3%; 
+    font-size: 120%;
     display: flex;
-    flex-direction: column;
+    
     justify-content: center;
+    align-items: center;
+
 }
+
+#respuesta p{
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 
 
 

@@ -2,7 +2,7 @@
 <html lang="es">
     <head>
         <title>Plantilla Formulario</title>
-        
+        <link rel="stylesheet" href="../webroot/css/plantilla.css">
     </head>
     <body>
         <header>
@@ -25,6 +25,8 @@
                 define('FECHA_MIN',"01/01/1900");
                 define('T_MAX_ALFABETICO',1000);
                 define('T_MIN_ALFABETICO',1);
+                define('MAX_EXTENSION',150);
+                define('MIN_EXTENSION',4);
                 
                 $aErrores=[  //Array de errores
                     'textoObligatorio' => '',
@@ -47,6 +49,9 @@
                     
                     'urlObligatoria'=>'',
                     'url'=>'',
+                    
+                    'archivoObligatorio'=>'',
+                    'archivo'=>'',
                                                             
                 ]; 
                 $aRespuestas=[  //Array de respuestas
@@ -70,8 +75,11 @@
                     
                     'urlObligatoria'=>'',
                     'url'=>'',
+                    
+                    'archivoObligatorio'=>'',
+                    'archivo'=>'',
                 ];                  
-                
+                $aExtensiones=['png','jpg','html','php','pdf', 'txt']; //Array con las extensiones de archivo validas
                 $oFechaHoraActual= new DateTime("now");
                 $sPruebaFecha=$oFechaHoraActual->format('m/d/Y'); //Declaramos la fecha actual, esto se usara varias veces en la pagina
                 //Cuando se envien los datos, se entrara aqui para validarlos
@@ -98,6 +106,9 @@
                             
                             'urlObligatoria' => validacionFormularios::validarURL($_REQUEST['urlObligatoria'], OBLIGATORIO), 
                             'url' => validacionFormularios::validarURL($_REQUEST['url'], OPCIONAL),
+                            
+                            'archivoObligatorio'=> validacionFormularios::validarNombreArchivo($_REQUEST['archivoObligatorio'], $aExtensiones, MAX_EXTENSION, MIN_EXTENSION, OBLIGATORIO),
+                            'archivo'=> validacionFormularios::validarNombreArchivo($_REQUEST['archivoObligatorio'], $aExtensiones, MAX_EXTENSION, MIN_EXTENSION, OPCIONAL),
                         ];   
                     
                      //Recorremos el array de errores 
@@ -133,7 +144,11 @@
                     $aRespuestas['telefono']=$_REQUEST['telefono'];
                     
                     $aRespuestas['urlObligatoria']=$_REQUEST['urlObligatoria'];
-                    $aRespuestas['url']=$_REQUEST['url'];                                                          
+                    $aRespuestas['url']=$_REQUEST['url']; 
+                    
+                    $aRespuestas['archivoObligatorio']=$_REQUEST['archivoObligatorio'];
+                     $aRespuestas['archivo']=$_REQUEST['archivo'];
+                    
                 ?>
                     <div id="respuesta">                        
                 <?php
@@ -170,7 +185,7 @@
                     
                     <div>
                         <label for="enteroObligatorio">Entero Obligatorio:</label>
-                        <input type="text" id="enteroObligatorio" name="enteroObligatorio" placeholder="Ej: 1" value="<?php echo (isset($_REQUEST['enteroObligatorio']) ? $_REQUEST['enteroObligatorio'] : ''); ?>"/>
+                        <input type="text" id="enteroObligatorio" name="enteroObligatorio" placeholder="Ej: 1" style="background-color: yellow" value="<?php echo (isset($_REQUEST['enteroObligatorio']) ? $_REQUEST['enteroObligatorio'] : ''); ?>"/>
                         <?php if (!empty($aErrores["enteroObligatorio"])) { ?>
                             <p style="color:red"><?php echo $aErrores["enteroObligatorio"]; ?></p>
                         <?php } ?>
@@ -184,14 +199,14 @@
                     </div>
                     
                     <div>
-                        <label for="realObligatorio">Real Obligatorio:</label><br>
-                        <input type="text" id="realObligatorio" name="realObligatorio" placeholder="Ej: 1.2" value="<?php echo (isset($_REQUEST['realObligatorio']) ? $_REQUEST['realObligatorio'] : ''); ?>"/>
-                        <?php if (!empty($aErrores['real'])) { ?>
+                        <label for="realObligatorio">Real Obligatorio:</label>
+                        <input type="text" id="realObligatorio" name="realObligatorio" placeholder="Ej: 1.2" style="background-color: yellow" value="<?php echo (isset($_REQUEST['realObligatorio']) ? $_REQUEST['realObligatorio'] : ''); ?>"/>
+                        <?php if (!empty($aErrores['realObligatorio'])) { ?>
                             <p style="color:red"><?php echo $aErrores['realObligatorio']; ?></p>
                         <?php } ?>
                     </div>
                     <div>
-                        <label for="real">Real:</label><br>
+                        <label for="real">Real:</label>
                         <input type="text" id="real" name="real" placeholder="Ej: 1.2" value="<?php echo (isset($_REQUEST['real']) ? $_REQUEST['real'] : ''); ?>"/>
                         <?php if (!empty($aErrores['real'])) { ?>
                             <p style="color:red"><?php echo $aErrores['real']; ?></p>
@@ -199,14 +214,14 @@
                     </div>
                     
                     <div>
-                        <label for="fechaObligatoria">Fecha Obligatoria:</label><br>
-                        <input type="date" id="fechaObligatoria" name="fechaObligatoria" value="<?php echo (isset($_REQUEST['fechaObligatoria']) ? $_REQUEST['fechaObligatoria'] : ''); ?>"/>
+                        <label for="fechaObligatoria">Fecha Obligatoria:</label>
+                        <input type="date" id="fechaObligatoria" name="fechaObligatoria" style="background-color: yellow" value="<?php echo (isset($_REQUEST['fechaObligatoria']) ? $_REQUEST['fechaObligatoria'] : ''); ?>"/>
                         <?php if (!empty($aErrores['fechaObligatoria'])) { ?>
                             <p style="color:red"><?php echo $aErrores['fechaObligatoria']; ?></p>
                         <?php } ?>
                     </div>
                     <div>
-                        <label for="fecha">Fecha:</label><br>
+                        <label for="fecha">Fecha:</label>
                         <input type="date" id="fecha" name="fecha" value="<?php echo (isset($_REQUEST['fecha']) ? $_REQUEST['fecha'] : ''); ?>"/>
                         <?php if (!empty($aErrores['fecha'])) { ?>
                             <p style="color:red"><?php echo $aErrores['fecha']; ?></p>
@@ -214,14 +229,14 @@
                     </div>
                     
                     <div>
-                        <label for="emailObligatorio">Email Obligatorio:</label><br>
-                        <input type="mail" id="emailObligatorio" name="emailObligatorio" placeholder="Ej: correo@gmail.es" value="<?php echo (isset($_REQUEST['emailObligatorio']) ? $_REQUEST['emailObligatorio'] : ''); ?>"/>
+                        <label for="emailObligatorio">Email Obligatorio:</label>
+                        <input type="mail" id="emailObligatorio" name="emailObligatorio" placeholder="Ej: correo@gmail.es" style="background-color: yellow" value="<?php echo (isset($_REQUEST['emailObligatorio']) ? $_REQUEST['emailObligatorio'] : ''); ?>"/>
                         <?php if (!empty($aErrores['emailObligatorio'])) { ?>
                             <p style="color:red"><?php echo $aErrores['emailObligatorio']; ?></p>
                         <?php } ?>
                     </div>
                     <div>
-                        <label for="email">Email:</label><br>
+                        <label for="email">Email:</label>
                         <input type="mail" id="email" name="email" placeholder="Ej: correo@gmail.es" value="<?php echo (isset($_REQUEST['email']) ? $_REQUEST['email'] : ''); ?>"/>
                         <?php if (!empty($aErrores['email'])) { ?>
                             <p style="color:red"><?php echo $aErrores['email']; ?></p>
@@ -229,14 +244,14 @@
                     </div>
                     
                     <div>
-                        <label for="telefonoObligatorio">Telefono Obligatorio:</label><br>
-                        <input type="tel" id="telefonoObligatorio" name="telefonoObligatorio" placeholder="000000000" value="<?php echo (isset($_REQUEST['telefonoObligatorio']) ? $_REQUEST['telefonoObligatorio'] : ''); ?>"/>
+                        <label for="telefonoObligatorio">Telefono Obligatorio:</label>
+                        <input type="tel" id="telefonoObligatorio" name="telefonoObligatorio" placeholder="000000000" style="background-color: yellow" value="<?php echo (isset($_REQUEST['telefonoObligatorio']) ? $_REQUEST['telefonoObligatorio'] : ''); ?>"/>
                         <?php if (!empty($aErrores['telefonoObligatorio'])) { ?>
                             <p style="color:red"><?php echo $aErrores['telefonoObligatorio']; ?></p>
                         <?php } ?>
                     </div>
                     <div>
-                        <label for="telefono">Telefono:</label><br>
+                        <label for="telefono">Telefono:</label>
                         <input type="tel" id="telefono" name="telefono" placeholder="000000000" value="<?php echo (isset($_REQUEST['telefono']) ? $_REQUEST['telefono'] : ''); ?>"/>
                         <?php if (!empty($aErrores['telefono'])) { ?>
                             <p style="color:red"><?php echo $aErrores['telefono']; ?></p>
@@ -244,19 +259,35 @@
                     </div>
                     
                     <div>
-                        <label for="urlObligatoria">URL Obligatorio:</label><br>
-                        <input type="url" id="urlObligatoria" name="urlObligatoria" placeholder="Ej: http://......" value="<?php echo (isset($_REQUEST['urlObligatoria']) ? $_REQUEST['urlObligatoria'] : ''); ?>"/>
+                        <label for="urlObligatoria">URL Obligatorio:</label>
+                        <input type="url" id="urlObligatoria" name="urlObligatoria" placeholder="Ej: http://......" style="background-color: yellow" value="<?php echo (isset($_REQUEST['urlObligatoria']) ? $_REQUEST['urlObligatoria'] : ''); ?>"/>
                         <?php if (!empty($aErrores['urlObligatoria'])) { ?>
                             <p style="color:red"><?php echo $aErrores['urlObligatoria']; ?></p>
                         <?php } ?>
                     </div>
                     <div>
-                        <label for="url">URL:</label><br>
+                        <label for="url">URL:</label>
                         <input type="url" id="url" name="url" placeholder="Ej: http://......" value="<?php echo (isset($_REQUEST['url']) ? $_REQUEST['url'] : ''); ?>"/>
                         <?php if (!empty($aErrores['url'])) { ?>
                             <p style="color:red"><?php echo $aErrores['url']; ?></p>
                         <?php } ?>
                     </div>
+                    
+                    <div>
+                        <label for="archivoObligatorio">Archivo Obligatorio:</label>
+                        <input type="file" id="archivoObligatorio" name="archivoObligatorio" value="<?php echo (isset($_REQUEST['archivoObligatorio']) ? $_REQUEST['archivoObligatorio'] : ''); ?>"/>
+                        <?php if (!empty($aErrores['archivoObligatorio'])) { ?>
+                            <p style="color:red"><?php echo $aErrores['archivoObligatorio']; ?></p>
+                        <?php } ?>
+                    </div>
+                    <div>
+                        <label for="archivo">Archivo:</label>
+                        <input type="file" id="archivo" name="archivo" value="<?php echo (isset($_REQUEST['archivo']) ? $_REQUEST['archivo'] : ''); ?>"/>
+                        <?php if (!empty($aErrores['archivo'])) { ?>
+                            <p style="color:red"><?php echo $aErrores['archivo']; ?></p>
+                        <?php } ?>
+                    </div>
+                    
                     
                     <div id="enviar">
                             <input id="boton" name="enviar" type="submit" value="Enviar">
