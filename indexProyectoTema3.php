@@ -174,14 +174,32 @@
                     <tr>
                         <td>25</td>
                         <td>Trabajar en PlantillaFormulario.php mi plantilla para hacer formularios como churros.</td>
-                        <td></td>
-                        <td></td>
+                        <td><a href="codigoPHP/plantilla.php"><image src="webroot/images/play.png" heigth="25%" width="25%"/></a></td>
+                        <td><a href="mostrarcodigo/muestraPlantilla.php"><image src="webroot/images/ojo.png" heigth="30%" width="30%"/></a></td>
                     </tr>
                     <tr>
                         <td>26</td>
                         <td>Probar la plantilla anterior desarrollando un formulario que recoja la temperatura y la presión atmosférica en una serie de fechas y (cuando el usuario lo decida) genere un informe con los datos recibidos y un promedios, mínimos y máximos de temperatura y presión atmosférica</td>
                         <td></td>
                         <td></td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>Ejercicio extra</td>
+                        <td><a href="codigoPHP/ejercicio27.php"><image src="webroot/images/play.png" heigth="25%" width="25%"/></a></td>
+                        <td><a href="mostrarcodigo/muestraEjercicio27.php"><image src="webroot/images/ojo.png" heigth="30%" width="30%"/></a></td>
+                    </tr>
+                    <tr>
+                        <td>Extra 1</td>
+                        <td>Formulario ChatGPT</td>
+                        <td><a href="codigoPHP/pruebaChatGPT.php"><image src="webroot/images/play.png" heigth="25%" width="25%"/></a></td>
+                        <td><a href="mostrarcodigo/pruebaChatGPT.php"><image src="webroot/images/ojo.png" heigth="30%" width="30%"/></a></td>
+                    </tr>
+                    <tr>
+                        <td>Extra 2</td>
+                        <td>Formulario Copilot</td>
+                        <td><a href="codigoPHP/pruebaCopilot.php"><image src="webroot/images/play.png" heigth="25%" width="25%"/></a></td>
+                        <td><a href="mostrarcodigo/pruebaCopilot.php"><image src="webroot/images/ojo.png" heigth="30%" width="30%"/></a></td>
                     </tr>
                 </tbody>
             </table>

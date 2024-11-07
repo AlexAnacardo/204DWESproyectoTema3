@@ -18,8 +18,11 @@
         echo($_FILES);
     //Usar var global
     ?>
+    
     <footer>
-        <p><a href="../indexProyectoTema3.php">Alex Asensio Sanchez</a></p>
+        <p><a href="../../index.html">Alex Asensio Sanchez</a></p>
+        <p><a href="../indexProyectoTema3.php">Tema 3</a></p>
+        <p><a target="blank" href="https://github.com/AlexAnacardo/204DWESProyectoTema3/tree/developer">GitHub del repositorio</a></p>
     </footer>
 </body>
 </html>
