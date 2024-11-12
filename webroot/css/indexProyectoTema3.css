@@ -35,10 +35,12 @@ main{
     align-items: center;    
     border-radius: 9%;
     padding: 3%;
+    
 }
 
 table{
     width: 100%;
+    
 }
 table, th, td{    
     border: 0.15em solid rgb(16, 9, 114);
