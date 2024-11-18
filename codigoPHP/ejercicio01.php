@@ -2,13 +2,13 @@
 <html lang="es">
     <head>
         <title>Ej 01</title>
-        <link rel="stylesheet" href="../webroot/css/ejercicio21.css">
+        <link rel="stylesheet" href="../webroot/css/ejercicio01.css">
     </head>
     <body>
         <header>
             <h1>Inicializar variables y mostrar los datos por pantalla</h1>
         </header>
-        <p>
+        <main>
             <?php
             /*
              * @version 2024/10/1
@@ -50,7 +50,7 @@
                 "<br>",
                 var_dump($array)
             ?>
-        </p>        
+        </main>
         <footer>
             <p><a href="../../index.html">Alex Asensio Sanchez</a></p>
             <p><a href="../indexProyectoTema3.php">Tema 3</a></p>
