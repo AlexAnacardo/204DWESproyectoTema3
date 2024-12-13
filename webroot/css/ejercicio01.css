@@ -34,7 +34,8 @@
                 flex-direction: column;
                 margin: 3% auto;
                 height: 100%;      
-                justify-content: left;                 
+                justify-content: center;
+                align-itmes: center;
             }
             
             h2{
