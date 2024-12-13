@@ -6,6 +6,7 @@
     <body>
         <header>
             <h1>Array bidimensional</h1>
+            <link rel="stylesheet" href="../webroot/css/ejercicio01.css">
         </header>
         <p>
             <?php

@@ -48,7 +48,7 @@ input{
 }
 #divSientoHoy p{
     width: 100%;
-    margin-left: -4.1%;
+    margin-left: 45%;
     height: 17%;
 }
 
@@ -83,6 +83,7 @@ input{
 #contenedorSientoHoy{
     display: block;
     margin-left: 30%;
+    
 }
 
 
@@ -189,13 +190,14 @@ html{
 
 /*Encabezado*/
 
-header h1{
-    text-align: center;
-    font-size: 400%;
-    background-color: rgb(216, 199, 224);
-    color: rgb(16, 9, 114);
-    padding: 2% 1%;
-}
+h1{
+                text-align: center;
+                font-size: 450%;
+                background-color: #131921;
+                /*background-color: #232F3E;*/
+                color: white;  
+                padding: 2% 0px;                 
+            }
 
 header{
     width: 100%;
@@ -210,26 +212,28 @@ body{
 /*footer*/
 
 footer{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: rgb(216, 199, 224);
-    font-size: 140%;
-}
-footer a{
-    text-decoration: none;
-    text-align: center;
-    color: rgb(16, 9, 114);
-    font-weight: bold;
-}
-p{
-    text-align: center;
-    width: fit-content;
-    margin: 2% 1.5%;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                background-color: #232F3E;
+                font-size: 140%;
+            }
 
-}
-footer p:hover{
-    transform: scale(1.3);
-    text-decoration: none;
-}
+
+            footer p{
+                text-align: center;
+                width: fit-content;
+                margin: 2% 1.5%;
+
+            }
+
+            footer a{
+                color: white;
+                font-weight: bold;
+                text-decoration: none;
+            }
+
+            footer p:hover{
+                text-decoration: underline;
+                color: white;
+            }

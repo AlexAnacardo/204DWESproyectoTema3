@@ -10,6 +10,7 @@
                 background-color: gray;
             }
         </style>
+        <link rel="stylesheet" href="../webroot/css/ejercicio01.css">
     </head>
     <body>
         <header>
@@ -72,17 +73,18 @@
                     echo("<h3>Usando while</h3>");
                         $iPunteroFilas=0;
                         $iPunteroAsientos=0;                
-                        while($iPunteroFilas<count($aAsientos)){                    
-                            while($iPunteroAsientos<count($aAsientos[$iPunteroFilas])){                        
-                                if(is_null($asiento)){
-                                echo('<td class="vacio">Vacio</td>');
-                            }
-                            else{
-                                echo('<td class="ocupado">'.$asiento.'</td>');
-                            }
+                        while($iPunteroFilas<count($aAsientos)){
+                            echo("<tr>");
+                            while($iPunteroAsientos<count($aAsientos[$iPunteroFilas])){ 
+                                if(is_null($aAsientos[$iPunteroFilas][$iPunteroAsientos])){
+                                    echo('<td class="vacio">Vacio</td>');
+                                }
+                                else{
+                                    echo('<td class="ocupado">'.$aAsientos[$iPunteroFilas][$iPunteroAsientos].'</td>');
+                                }
                                 $iPunteroAsientos++;
                             }
-                            echo("<br>");
+                            echo("</tr>");                            
                             $iPunteroFilas++;
                             $iPunteroAsientos=0;
                         }
@@ -92,10 +94,17 @@
                     <?php
                         echo("<h3>Usando for</h3>");                 
                         for($i=0; $i<count($aAsientos); $i++){
+                            echo("<tr>");
                             for($j=0; $j<count($aAsientos[$i]); $j++){
-                                echo($aAsientos[$i][$j].", ");
+                                if(is_null($aAsientos[$i][$j])){
+                                    echo('<td class="vacio">Vacio</td>');
+                                }
+                                else{
+                                    echo('<td class="ocupado">'.$aAsientos[$i][$j].'</td>');
+                                }
                             }
-                            echo("<br>");
+                            echo("</tr>");
+                                                        
                         }
                     ?>
                 </table>                           

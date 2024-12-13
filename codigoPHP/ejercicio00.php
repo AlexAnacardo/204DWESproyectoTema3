@@ -2,7 +2,7 @@
 <html lang="es">
     <head>
         <title>Ej 00</title>
-        <link rel="stylesheet" href="../webroot/css/ejercicio21.css">
+        <link rel="stylesheet" href="../webroot/css/ejercicio00.css">
             
     </head>
     <body>
