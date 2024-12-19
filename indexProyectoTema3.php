@@ -5,8 +5,8 @@
         <meta name="application-name" content="indice">
         <meta name="description" content="Indice tema 3">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-         <link rel="stylesheet" href="webroot/css/indexProyectoTema3.css">
-         <title>Alex Asensio Sanchez</title>
+        <link rel="stylesheet" href="webroot/css/indexProyectoTema3.css">
+        <title>Alex Asensio Sanchez</title>
      </head>
      <body>
          <header>
